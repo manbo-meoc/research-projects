@@ -1,0 +1,11 @@
+{
+  "model": "models/Qwen/Qwen2.5-0.5B-Instruct",
+  "lora_adapter": "models/qwen25_05b_gsm8k_sft_dpo_lora_m384_ckpt_lr2e6_b005",
+  "benchmark": "GSM8K test",
+  "data_path": "benchmarks/gsm8k/test.jsonl",
+  "limit": 1319,
+  "correct": 389,
+  "total": 1319,
+  "accuracy": 0.29492039423805916,
+  "output": "results/gsm8k/all/qwen25_05b_gsm8k_sft_dpo_lora_m384_ckpt_lr2e6_b005_eval_all.jsonl"
+}

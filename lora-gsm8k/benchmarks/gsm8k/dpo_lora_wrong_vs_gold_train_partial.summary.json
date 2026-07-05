@@ -1,0 +1,12 @@
+{
+  "data_path": "benchmarks/gsm8k/train.jsonl",
+  "eval_path": "results/gsm8k/train/qwen25_05b_gsm8k_lora_eval_train1500.jsonl",
+  "output": "benchmarks/gsm8k/dpo_lora_wrong_vs_gold_train_partial.jsonl",
+  "prompt_format": "chat",
+  "pairs": 96,
+  "eval_rows": 158,
+  "gold_rows": 7473,
+  "skipped_correct": 62,
+  "skipped_missing_gold": 0,
+  "skipped_empty_rejected": 0
+}

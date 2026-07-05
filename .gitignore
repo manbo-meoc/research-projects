@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Local environments and secrets
+.env
+.venv/
+venv/
+env/
+
+# Large local artifacts
+models/
+packages/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+
+# Generated experiment payloads
+experiments/
+results/**/*.jsonl
+benchmarks/**/*.jsonl
+*.backup_*
+

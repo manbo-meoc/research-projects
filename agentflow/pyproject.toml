@@ -1,0 +1,73 @@
+[project]
+
+# 项目基本信息
+name = "agentflow"
+
+# 当前版本（开发版）
+version = "0.1.0"
+
+# 项目简介
+description = "A lightweight LangGraph-based Tool Agent Framework for tau2-bench evaluation"
+
+# 最低 Python 版本
+requires-python = ">=3.10"
+
+
+# 项目依赖
+dependencies = [
+
+    # LangGraph 工作流框架
+    "langgraph",
+
+    # LangChain 基础组件
+    "langchain",
+
+    # OpenAI 模型接口
+    # Planner 并不是自己实现 LLM，而是通过这里调用 GPT
+    "langchain-openai",
+
+    # 数据模型（State、Tool Schema 等）
+    "pydantic",
+
+    # 自动读取 .env 中的 API Key
+    "python-dotenv"
+]
+
+
+# Ruff：Python 代码规范检查工具
+[tool.ruff]
+line-length = 88
+
+
+
+# ------------------------------------
+# 后期加入
+# ------------------------------------
+
+#[project.scripts]
+#agentflow = "agentflow.agent:main"
+
+# 作用：
+# 定义一个终端命令 agentflow
+#
+# 当用户输入：
+#
+#     agentflow
+#
+# Python 会自动执行：
+#
+#     agentflow/agent.py
+#
+# 中的：
+#
+#     def main():
+#
+# 也就是说：
+#
+# agent.py 是整个 AgentFlow Framework 的程序入口。
+#
+# 作用类似于 C/C++ 的 main()。
+
+[tool.setuptools.packages.find]
+include = ["agentflow*"]
+exclude = ["configs*", "docs*", "examples*", "experiments*", "tests*"]

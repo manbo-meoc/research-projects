@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.env
+.venv/
+
+# Keep scripts and summary JSONs in git, but exclude large generated artifacts.
+models/
+packages/
+benchmarks/**/*.jsonl
+results/**/*.jsonl
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.backup_*
+
