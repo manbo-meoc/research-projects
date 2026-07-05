@@ -20,6 +20,7 @@
 - `lora/benchmarks/gsm8k/*.jsonl`：下载数据、DPO pair 数据
 - `lora/results/**/*.jsonl`：逐样本预测、候选答案生成结果
 - LoRA smoke-test summary
+- LoRA 额外消融分支：wrong-vs-gold、K5 replay、stable anchor、mixed replay
 
 ## AgentFlow 最终上传内容
 
@@ -32,12 +33,22 @@
 
 ## LoRA 最终上传内容
 
+只保留以下三条 GSM8K 微调/评估线：
+
+- `Qwen2.5-0.5B-Instruct` base
+- SFT-LoRA
+- SFT + DPO boundary anchor full1500
+
+包含文件：
+
+- `lora-gsm8k/scripts/download_gsm8k.py`：GSM8K 下载
 - `lora-gsm8k/scripts/train_gsm8k_lora.py`：SFT-LoRA 训练
 - `lora-gsm8k/scripts/eval_gsm8k_qwen.py`：GSM8K 评估
-- `lora-gsm8k/scripts/generate_gsm8k_candidates_batch.py`：K=5 候选答案生成
-- `lora-gsm8k/scripts/build_gsm8k_stable_dpo_pairs.py`：stable DPO 数据构造
+- `lora-gsm8k/scripts/generate_gsm8k_candidates_batch.py`：SFT-LoRA K=5 候选答案生成
 - `lora-gsm8k/scripts/build_gsm8k_boundary_dpo_pairs.py`：boundary DPO 数据构造
-- `lora-gsm8k/scripts/train_gsm8k_dpo_stable_anchor.py`：stable-anchor DPO 训练
 - `lora-gsm8k/scripts/train_gsm8k_dpo_boundary_anchor.py`：boundary-anchor DPO 训练
-- `lora-gsm8k/results/gsm8k/all/*.summary.json`：最终评估摘要
+- `lora-gsm8k/benchmarks/gsm8k/dpo_lora_boundary_full1500.summary.json`：boundary DPO 数据摘要
+- `lora-gsm8k/results/gsm8k/all/qwen25_05b_base_gsm8k_eval_all.summary.json`：base 评估摘要
+- `lora-gsm8k/results/gsm8k/all/qwen25_05b_gsm8k_lora_eval_all.summary.json`：SFT-LoRA 评估摘要
+- `lora-gsm8k/results/gsm8k/all/qwen25_05b_gsm8k_sft_dpo_lora_boundary_anchor_full1500_eval_all.summary.json`：boundary-anchor DPO 评估摘要
 - `lora-gsm8k/README.md`：中文复现说明和结果表
